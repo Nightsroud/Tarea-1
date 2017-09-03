@@ -13,15 +13,15 @@ public abstract class AbstractCard implements ICard {
 	protected int Attack;
 	
 	/**
-	 * Card Constructor
+	 * Card Constructor, in case of negative values these are changed to 0.
 	 * @param n: Name of the card
 	 * @param lp: Life points of the card
 	 * @param a: Attack points of the card
 	 */
 	public AbstractCard(String n, int lp, int a) {
 		Name = n;
-		lifePoints = lp;
-		Attack = a;
+		lifePoints = Math.max(lp, 0);
+		Attack = Math.max(a, 0);
 	}
 	
 	/**
